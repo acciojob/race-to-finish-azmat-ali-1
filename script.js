@@ -1,10 +1,10 @@
-window.promises = [prom1,prom2,prom3,prom4,prom5];
+window.promises = [];
 
 // Do not change the code above this
 // add your promises to the array `promises`
 let prom1 = new Promise((resolve,reject)=>{
 	setTimeout(()=>{
-		resolve("data");
+		resolve("data azmat");
 	},1000);
 });
 let prom2 = new Promise((resolve,reject)=>{
@@ -14,17 +14,22 @@ let prom2 = new Promise((resolve,reject)=>{
 });let prom3 = new Promise((resolve,reject)=>{
 	setTimeout(()=>{
 		resolve("data");
-	},3000);
+	},4000);
 });let prom4 = new Promise((resolve,reject)=>{
 	setTimeout(()=>{
 		resolve("data");
-	},4000);
+	},2000);
 });let prom5 = new Promise((resolve,reject)=>{
 	setTimeout(()=>{
-		resolve("data");
-	},5000);
+		resolve("data azmat");
+	},9000);
 });
 
-let result = Promise.any(prom1,prom2,prom3,prom4,prom5);
-let div= document.getElementById("output");
-div.innerText=result;
+
+
+
+let result = Promise.any([prom1,prom2,prom3,prom4,prom5]);
+result.then((value)=>{
+    let div= document.getElementById("output");
+    div.innerText=value;
+})
