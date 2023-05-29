@@ -32,4 +32,8 @@ let result = Promise.any([prom1,prom2,prom3,prom4,prom5]);
 result.then((value)=>{
     let div= document.getElementById("output");
     div.innerText=value;
-})
+});
+
+result.catch(e){
+	
+}
